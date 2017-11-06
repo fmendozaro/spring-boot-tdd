@@ -6,4 +6,5 @@ import com.hanselnpetal.domain.CustomerContact;
 
 public interface CustomerContactRepository extends CrudRepository<CustomerContact, Long> {
 
+	public CustomerContact findByEmail(String email);
 }
