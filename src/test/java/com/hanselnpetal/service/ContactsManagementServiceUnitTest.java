@@ -25,7 +25,7 @@ public class ContactsManagementServiceUnitTest {
     @Mock
 	private CustomerContactRepository customerContactRepository;
 	
-	
+	@InjectMocks
 	private ContactsManagementService contactsManagementService;
 	
 	
@@ -41,13 +41,14 @@ public class ContactsManagementServiceUnitTest {
 		CustomerContact aMockContact = new CustomerContact();
 		aMockContact.setFirstName("Jenny");
 		aMockContact.setLastName("Johnson");
-		
-		//when(customerContactRepository.save(any(CustomerContact.class))).thenReturn(aMockContact);
+
+		when(customerContactRepository.save(any(CustomerContact.class))).thenReturn(aMockContact);
 				
 		// Save the contact
-		
+		CustomerContact newContact = contactsManagementService.add(null);
 		
 		// Verify the save
+        assertEquals("Jenny", newContact.getFirstName());
 		
 	}
 }
