@@ -30,12 +30,12 @@ public class ContactsManagementServiceIntegrationTest {
 		
 		
 		// Test adding the contact
-		
+		CustomerContact newContact = contactsManagementService.add(aContact);
 		
 		// Verify the addition
-		//assertNotNull(newContact);
-		//assertNotNull(newContact.getId());
-		//assertEquals("Jenny", newContact.getFirstName());
+		assertNotNull(newContact);
+		assertNotNull(newContact.getId());
+		assertEquals("Jenny", newContact.getFirstName());
 		
 	}
 }
