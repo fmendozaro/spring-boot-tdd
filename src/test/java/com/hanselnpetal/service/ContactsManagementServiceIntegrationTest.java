@@ -36,6 +36,8 @@ public class ContactsManagementServiceIntegrationTest {
 		assertNotNull(newContact);
 		assertNotNull(newContact.getId());
 		assertEquals("Jenny", newContact.getFirstName());
+		// If you want to test each field in the DB you can
+		assertEquals("Johnson", newContact.getLastName());
 		
 	}
 }
