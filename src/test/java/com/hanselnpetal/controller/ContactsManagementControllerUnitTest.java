@@ -78,12 +78,13 @@ public class ContactsManagementControllerUnitTest {
 		
 		// simulate the form bean that would POST from the web page
 		CustomerContact aContact = new CustomerContact();
+		aContact.setLastName("MEndoza");
 		
 		
 		// simulate the form submit (POST)
 		mockMvc
-			.perform(post("/addContact", null))
-			.andExpect(status().is(null))
+			.perform(post("/addContact", aContact))
+			.andExpect(status().is(302))
 			.andReturn();
 	}
 	
